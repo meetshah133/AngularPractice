@@ -1,0 +1,29 @@
+<form (ngSubmit)="addUser(formData)" #formData=ngForm>
+    <input type="text" placeholder="name"  name="uname" ngModel required #uname=ngModel>
+    <div *ngIf="uname.invalid">
+        User name is required
+    </div>
+    <input type="email" placeholder="Email" name="email" ngModel required email #uemail=ngModel>
+    <div *ngIf="uemail.invalid">
+        User email is required
+        
+    </div>
+    <input type="password" placeholder="Password" name="password" ngModel required #upass=ngModel>
+    <div *ngIf="upass.invalid">
+        Password is required
+    </div>
+    <input type="text" placeholder="City" name="city" ngModel required #ucity=ngModel>
+    <div *ngIf="ucity.invalid">
+        City is required
+    </div>
+    <button class="btn btn-sucsess" > Submit </button>
+
+</form>
+
+<button class="btn btn-info" (click) = "loadUsers()"> Get user</button>
+<br>
+<ul>
+    <li *ngFor = "let data of myData">
+        {{data|json}}
+    </li>
+</ul>

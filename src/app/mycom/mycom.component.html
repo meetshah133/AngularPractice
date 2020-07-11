@@ -1,0 +1,32 @@
+<p>mycom works!</p>
+<app-header></app-header>
+
+
+<p> User's list are </p>
+<ul>
+    <li *ngFor =  "let user of userData">
+        {{user}}
+
+    </li>
+</ul>
+<p> Department are </p>
+<ul>
+        <li *ngFor =  "let dept of departmentData">
+            {{dept}}
+    
+        </li>
+    </ul>
+
+   <app-favorite [isFavorite]="myFavorite"> </app-favorite>
+   <br>
+   <br>
+   <app-likecomp> </app-likecomp>
+   <br>
+   <app-footer></app-footer>
+   <ul>
+       <li> {{employeeData.name | uppercase}} </li>
+       <li> {{employeeData.salary | currency:'INR'}}</li>
+       <li> {{employeeData.rating | number:'2.2-3'}}</li>
+       <li> {{employeeData.doj | date:'mm/yy'}}</li>
+       <li>{{employeeData |json}}</li>
+   </ul>
